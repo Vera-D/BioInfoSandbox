@@ -1,7 +1,7 @@
-#Project 1
-## In this scenario we will have a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes:
-## Gene List
-# 1ST PASSS
+#Project 1 - this contan file contains R script code for assesing sequence complexity with common genes used in oncology dx assays.
+-In this scenario we will have a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes:
+-Gene List
+- 1ST PASSS
 
 # KRAS
 # NRAS
