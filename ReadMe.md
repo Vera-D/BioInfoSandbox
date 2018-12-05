@@ -1,8 +1,8 @@
-# Project Description - this contan file contains R script code for assesing sequence complexity with common genes used in oncology dx assays when looking at 1 mer,2,3,4,5,and 6 mers. The goal is to get an idea of sequence distriution for the different genes across the differenet n-mer combos. In this script we will have a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes: KRAS, NRAS, HRAS. In the second run I will include BRAF, EGFR, PI3CK.
+## Project Description - this file contains R script code for assesing sequence complexity with common genes used in oncology dx assays when looking at 1 mer,2,3,4,5,and 6 mers. The goal is to get an idea of sequence distriution for the different genes across the differenet n-mer combos. In this script we will have a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes: KRAS, NRAS, HRAS. In the second run I will include BRAF, EGFR, PI3CK. To Test: Copy paste the code per section onto the R IDE. Be sure to modify the paths to your box. 
 
-# Step1: Go to Ensemble and download the reference sequence per gene using CHR38 annotatations. 
+## Step1: Go to Ensemble and download the reference sequence per gene using CHR38 annotatations. 
 
-# HRAS is small so lets start there
+## HRAS is small so lets start there
 
 library("seqinr", lib.loc="~/R/win-library/3.3")
 
@@ -19,7 +19,7 @@ barplot(count(HRAS,4),col="forest green",main="HRAS count per 4-mer",las=2)
 barplot(count(HRAS,5),col="forest green",main="HRAS count per 5-mer",las=2)
 barplot(count(HRAS,6),col="forest green",main="HRAS count per 6-mer",las=2)
 
-# Lets plot KRAS
+## Lets plot KRAS
 KRAS <-read.fasta(file="C:/Users/vdiaz/Desktop/BioInfo-Sandbox/Homo_sapiens_KRAS_sequence.fa", as.string = FALSE, seqtype = "DNA")
 KRAS<-KRAS[[1]]
 length(KRAS)
@@ -34,7 +34,7 @@ barplot(count(KRAS,5),col="forest green",main="KRAS count per 5-mer",las=2)
 barplot(count(KRAS,6),col="forest green",main="KRAS count per 6-mer",las=2)
 
 
-# Lets plot TP53
+## Lets plot TP53
 TP53 <-read.fasta(file="C:/Users/vdiaz/Desktop/BioInfo-Sandbox/Homo_sapiens_TP53_sequence.fa", as.string = FALSE, seqtype = "DNA")
 TP53<-TP53[[1]]
 length(TP53)
@@ -48,8 +48,8 @@ barplot(count(TP53,4),col="forest green",main="TP53 count per 4-mer",las=2)
 barplot(count(TP53,5),col="forest green",main="TP53 count per 5-mer",las=2)
 barplot(count(TP53,6),col="forest green",main="TP53 count per 6-mer",las=2)
 
-# Lets output some values
-# Set the working directory
+## Lets output some values
+## Set the working directory
 setwd("C:/Users/vdiaz/Desktop/BioInfo-Sandbox/KRASout")
 write.csv(count(KRAS,1), file = "1mer.csv")
 write.csv(count(KRAS,2), file = "2mer.csv")
@@ -74,7 +74,7 @@ write.csv(count(TP53,4), file = "4mer.csv")
 write.csv(count(TP53,5), file = "5mer.csv")
 write.csv(count(TP53,6), file = "6mer.csv")
 
-# Probabilities
+## Probabilities
 HRAS_4mer<-count(HRAS,4)
 KRAS_4mer<-count(KRAS,4)
 TP53_4mer<-count(TP53,4)
@@ -82,7 +82,7 @@ KRAS_6mer<-count(KRAS,6)
 TP53_6mer<-count(TP53,6)
 HRAS_6mer<-count(HRAS,6)
 
-# PROBABILIY CALC
+## PROBABILIY CALC
 P_TP53_4mer<-TP53_4mer/256
 P_HRAS_4mer<-HRAS_4mer/256
 P_KRAS_4mer<-KRAS_4mer/256
@@ -90,10 +90,10 @@ P_TP53_6mer<-TP53_6mer/4096
 P_KRAS_6mer<-KRAS_6mer/4096
 P_HRAS_6mer<-HRAS_6mer/4096
 
-# as fractions
+## as fractions
 fractions(P_TP53_4mer)
 
-# Function to count how many times get 0 in the vector
+## Function to count how many times get 0 in the vector
 func1 <- function(vector){
 counter=0
 	for (i in 1:length(vector)) { 
