@@ -1,6 +1,10 @@
 ## Project Description
 
-This file contains R script code for assesing sequence complexity with common genes used in oncology dx assays when looking at 1 mer, 2, 3, 4, 5,and 6 mers. The goal is to get an idea of sequence distriution for the different genes across the differenet n-mer combos. In this script we will have a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes: KRAS, NRAS, HRAS. In the second run I will include BRAF, EGFR, PI3CK. To Test: Copy paste the code per section onto the R IDE. Be sure to modify the paths to your box. 
+This file contains R script for assesing sequence complexity with common genes used in oncology diagnostic (dx) assays for 1 mer, 2, 3, 4, 5,and 6 mers. The goal is to get an idea of sequence distriution for the different genes across the differenet n-mer combiations. Inputs include using a FASTA file with the gene sequence of a panel. A simple panel will sequence 6 genes: KRAS, NRAS, HRAS. 
+
+In the second section we include BRAF, EGFR, PI3CK genes. 
+
+To Test: Openthe file using R IDE. Be sure to modify the paths to your box. 
 
 ## Step1: 
 
